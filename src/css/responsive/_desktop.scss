@@ -1,0 +1,162 @@
+@media screen and (min-width:950px) {
+.desktop {display: block;}
+.mobile {display: none !important;}
+
+// General Styles
+// ---- Page Styles ----
+section {
+    &.landing {
+        .text-div {
+            padding: 10px 200px 0;
+        }
+
+        &.home .image-div {padding-top: 40px; padding-bottom: 40px;}
+        &.about, &.contact, &.sitemap, &.services {
+            grid-template-columns: 50% 50%;
+        }
+    }
+}
+
+.testimonials {
+    .testimonials-flex {
+        padding: 0 100px;
+    }
+}
+
+// ######## Header/NavBar ########
+header {height: 80px;}
+
+nav.desktop {
+    height: 80px;
+    width: 100%;
+    padding: 10px 20px;
+
+    background-color: $white; // <----------- COLOR
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    display: flex;
+    justify-content: space-between;
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+
+        svg {
+            margin-left: 2px;
+            margin-bottom: -3px;
+        }
+
+        color: $black;
+        a {
+            color: $black;
+            text-decoration: none;
+            &:active, &:hover, &:focus {text-decoration: underline;}
+        }
+    }
+}
+
+.dropdown-container {
+    position: absolute;
+    top: 80px;
+    right: 0;
+
+    background-color: $white;
+
+    width: 400px;
+    height: auto;
+
+    padding: 10px 20px;
+
+    ul {
+        list-style-type: none;
+
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 5px 15px;
+
+        color: $black;
+        a {
+            color: $black;
+            text-decoration: none;
+            &:active, &:hover, &:focus {text-decoration: underline;}
+        }
+
+        li {
+            max-width: 150px;
+
+            svg {
+                margin-right: 5px;
+                margin-bottom: -3px;
+            }
+        }
+    }
+}
+
+// ######## PAGES ########
+// Home 
+.home.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .services-flex {
+        padding: 20px 0;
+        width: 750px;
+        gap: 20px 50px;
+        div {
+            width: 200px;
+            height: 200px;
+        }
+    }
+}
+
+// ---- About Page ----
+.about.about-the-company {padding: 0 200px;}
+
+// ---- Services Sitemap ----
+.sitemap.sitemap-list {padding: 0 200px;}
+
+// Contact Page
+
+// ---- SingleService Page ----
+.service {padding: 0 200px;}
+}
+
+@media screen and (min-width: 1280px) {
+
+section {
+    &.landing {
+        .text-div {
+            padding: 10px 300px 0;
+        }
+    }
+}
+
+.testimonials {
+    .testimonials-flex {
+        padding: 0 250px;
+    }
+}
+
+// ---- About Page ----
+.about.about-the-company {padding: 0 300px;}
+
+// ---- Services Sitemap ----
+.sitemap.sitemap-list {padding: 0 300px;}
+
+// Contact Page
+
+// ---- SingleService Page ----
+.service {padding: 0 300px;}
+}

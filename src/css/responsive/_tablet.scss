@@ -1,0 +1,75 @@
+@media screen and (min-width: 680px) {
+@import "../desktop_variables";
+
+// General Styles
+.tablet {
+    display: inline-block;
+}
+
+// ---- Page Styles ----
+section {
+    &.landing {
+        .text-div {
+            padding: 10px 50px 0;
+        }
+
+        &.about, &.contact, &.sitemap, &.services {
+            height: 150px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+
+            .text-div {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 10px 80px 0 20px;
+            }
+        }
+    }
+}
+
+.testimonials {
+    .testimonials-flex {
+        padding: 0 50px;
+    }
+}
+
+// ######## Header/NavBar ########
+header {height: 70px;}
+
+nav.mobile {
+    height: 70px;
+}
+
+#mobile-menu {
+    .mobile-menu-back {
+        height: 46px;
+        width: 46px;
+    }
+}
+
+// ######## PAGES ########
+.home.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .services-flex {
+        width: 500px;
+        div {
+            width: 200px;
+            height: 200px;
+        }
+    }
+}
+
+// ---- About Page ----
+.about.about-the-company {padding: 0 50px;}
+
+// ---- Services Sitemap ----
+.sitemap.sitemap-list {padding: 0 50px;}
+
+// Contact Page 
+
+// ---- SingleService Page ----
+.service {padding: 0 50px;}
+}
