@@ -12,23 +12,23 @@ const Contact = () => {
       </section>
       <section className='contact contact-form'>
         <form>
-          <div>
+          <div className='contact-form-greeting'>
             <h2>Contact Us</h2>
             <h3><span>We would love to hear from you!</span></h3>
           </div>
-          <div>
+          <div className='contact-form-name'>
             <label><h3>Name:</h3></label>
             <input type="text" placeholder='Enter your name here' />
           </div>
-          <div>
+          <div className='contact-form-email'>
             <label><h3>Email:</h3></label>
             <input type="text" placeholder='Enter your email here' />
           </div>
-          <div>
+          <div className='contact-form-subject'>
             <label><h3>Subject:</h3></label>
             <input type="text" placeholder='Enter your enquiry subject here' />
           </div>
-          <div>
+          <div className='contact-form-message'>
             <label><h3>Message:</h3></label>
             <textarea rows={10} placeholder='Enter your enquiry message here' />
           </div>

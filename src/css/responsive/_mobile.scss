@@ -134,6 +134,13 @@ section {
     svg {
         font-size: 12px;
     }
+
+    .map-div {
+        >* {
+            width: 100%;
+            height: 500px;
+        }
+    }
 }
 
 // ######## Header/NavBar ########

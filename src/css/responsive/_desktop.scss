@@ -142,6 +142,10 @@ nav.desktop {
 .sitemap.sitemap-list {padding: 0 200px;}
 
 // Contact Page
+.contact.contact-form {
+    margin: 0 auto;
+    max-width: 70%;
+}
 
 // ---- SingleService Page ----
 .service {padding: 0 200px;}
@@ -170,6 +174,20 @@ section {
 .sitemap.sitemap-list {padding: 0 300px;}
 
 // Contact Page
+
+.contact.contact-form form {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "greeting greeting" "name email" "subject subject" "message message" "button button";
+    gap: 15px;
+
+    .contact-form-greeting {grid-area: greeting;}
+    .contact-form-name {grid-area: name;}
+    .contact-form-email {grid-area: email;}
+    .contact-form-subject {grid-area: subject;}
+    .contact-form-message {grid-area: message;}
+    .contact-submit {grid-area: button;}
+}
 
 // ---- SingleService Page ----
 .service {padding: 0 300px;}
