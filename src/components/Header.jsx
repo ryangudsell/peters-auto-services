@@ -1,10 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { List, ChevronUp, ChevronDown, ArrowRight } from 'react-bootstrap-icons'
 import MobileMenu from './MobileMenu'
 import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
+
+const baseUrl = import.meta.env.VITE_WP_API_BASEURL
 
 const Header = () => {
   const navigate = useNavigate()
+
+  const endpoint = `${baseUrl}/services`
+  const [services, setServices] = useState([])
+  const [loading, setLoading] = useState(true)
 
   const [menuIsOpen, openMenu] = useState(false)
   const toggleMobileMenu = () => {
@@ -17,21 +24,38 @@ const Header = () => {
     openDropDown(!dropDownIsOpen);
   }
 
+  useEffect(() => {
+    axios.get(`${endpoint}`)
+    .then((res) => {
+      setServices(res.data)
+      setLoading(false)
+      console.log(res.data);
+    })
+    .catch((err) => console.log(err))
+  }, [])
+
+  function decodeHTMLEntities(text) {
+    const doc = new DOMParser().parseFromString(text, 'text/html');
+    return doc.documentElement.textContent;
+  }
+
   return (
     <header id='header'>
       {menuIsOpen && <MobileMenu closeMethod={toggleMobileMenu} />}
       {dropDownIsOpen && (
         <aside className='dropdown-container border-bottom'>
           <ul>
-            <li><Link to="/services/:id"><p><ArrowRight /> Service</p></Link></li>
-            <li><Link to="/services/:id"><p><ArrowRight /> Service</p></Link></li>
-            <li><Link to="/services/:id"><p><ArrowRight /> Service</p></Link></li>
-            <li><Link to="/services/:id"><p><ArrowRight /> Service</p></Link></li>
-            <li><Link to="/services/:id"><p><ArrowRight /> Service</p></Link></li>
-            <li><Link to="/services/:id"><p><ArrowRight /> Service</p></Link></li>
-            <li><Link to="/services/:id"><p><ArrowRight /> Service</p></Link></li>
-            <li><Link to="/services/:id"><p><ArrowRight /> Service</p></Link></li>
-            <li><Link to="/services/:id"><p><ArrowRight /> Service</p></Link></li>
+            {!loading && services.map((service, index) => {
+              return (
+                <li key={`${service}-${index}`}>
+                  <Link to={`/services/${service.id}`}><p>
+                    <ArrowRight /> 
+                    <span>{decodeHTMLEntities(service.title.rendered)}</span>
+                  </p></Link>
+                </li>
+              )
+            })
+            }
           </ul>
         </aside>
       )}

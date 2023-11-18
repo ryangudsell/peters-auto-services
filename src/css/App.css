@@ -503,7 +503,7 @@ footer .footer-back-button svg {
   nav.desktop {
     height: 80px;
     width: 100%;
-    padding: 10px 20px;
+    padding: 10px 50px;
     background-color: #fafafa;
     position: absolute;
     top: 0;
@@ -516,7 +516,7 @@ footer .footer-back-button svg {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 15px;
+    gap: 25px;
     color: #000000;
   }
   nav.desktop ul svg {
@@ -535,7 +535,7 @@ footer .footer-back-button svg {
     top: 80px;
     right: 0;
     background-color: #fafafa;
-    width: 400px;
+    width: 550px;
     height: auto;
     padding: 10px 20px;
   }
@@ -546,9 +546,9 @@ footer .footer-back-button svg {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
-    gap: 5px 15px;
+    gap: 15px 25px;
     color: #000000;
   }
   .dropdown-container ul a {
@@ -559,11 +559,23 @@ footer .footer-back-button svg {
     text-decoration: underline;
   }
   .dropdown-container ul li {
-    max-width: 150px;
+    width: 30%;
   }
-  .dropdown-container ul li svg {
+  .dropdown-container ul li p {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .dropdown-container ul li p span {
+    flex: 1 1 auto;
+    word-wrap: break-word;
+    max-width: calc(100% - 30px);
+  }
+  .dropdown-container ul li p svg {
     margin-right: 5px;
     margin-bottom: -3px;
+    flex: 0 0 auto;
   }
   .home.services {
     display: flex;
