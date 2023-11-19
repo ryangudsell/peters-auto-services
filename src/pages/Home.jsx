@@ -43,9 +43,11 @@ const Home = () => {
       return (
         <div className='on-click' key={`${service}-${index}`}
           onClick={() => navigate(`/services/${service.id}`)}
-          style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${service.acf.service_image})`}}><h3>
-          {decodeHTMLEntities(service.title.rendered)}
-        </h3></div>
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${service.acf.service_image})`, color: 'white'
+            }}>
+              <h3>{decodeHTMLEntities(service.title.rendered)}</h3>
+        </div>
       )
     })
 

@@ -12,10 +12,6 @@
     margin: 0;
   }
 }
-h1, h2 {
-  font-family: "Montserrat", sans-serif;
-}
-
 h1 {
   font-size: 28px;
   font-weight: 900;
@@ -32,10 +28,6 @@ h3 {
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 0;
-}
-
-h3, h4, p, a, li, textarea, input {
-  font-family: "Roboto", sans-serif;
 }
 
 p, a, li, textarea, input {
@@ -56,9 +48,6 @@ body.no-scroll {
   overflow: hidden;
 }
 
-body {
-  background-color: #fafafa;
-}
 body #root {
   min-height: 100vh;
   display: grid;
@@ -67,14 +56,11 @@ body #root {
 
 .border-bottom {
   border-bottom: 4px solid;
-  border-color: #549CD6;
 }
 
 button {
   padding: 5px 15px;
   border: 4px solid;
-  border-color: #549CD6;
-  background-color: #fafafa;
   text-transform: uppercase;
 }
 
@@ -116,10 +102,8 @@ section.landing {
 }
 section.landing .image-div {
   min-height: 80px;
-  background-image: linear-gradient(rgba(0, 80, 158, 0.8), rgba(0, 80, 158, 0.8)), url("./img/landing-img.jpeg");
   background-repeat: no-repeat, no-repeat;
   background-size: cover;
-  color: #fafafa;
   padding: 10px;
   text-align: center;
 }
@@ -187,7 +171,6 @@ nav.mobile {
   height: 60px;
   width: 100%;
   padding: 10px 20px;
-  background-color: #fafafa;
   position: absolute;
   top: 0;
   left: 0;
@@ -202,7 +185,6 @@ nav.mobile * {
 #mobile-menu {
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.8);
   color: white;
   position: absolute;
   top: 0;
@@ -260,11 +242,7 @@ nav.mobile * {
 .home.landing .text-div div > *:last-child {
   margin-bottom: 0;
 }
-.home.landing .text-div button {
-  color: #000000;
-}
 .home.landing .text-div button a {
-  color: #000000;
   text-decoration: none;
 }
 .home.landing .text-div button a:active, .home.landing .text-div button a:hover, .home.landing .text-div button a:focus {
@@ -287,7 +265,6 @@ nav.mobile * {
 .home.services .services-flex div {
   width: 100px;
   height: 100px;
-  color: #fafafa;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -386,10 +363,7 @@ nav.mobile * {
 footer {
   padding: 20px 10px;
   position: relative;
-  background-color: #0072BC;
-  color: #fafafa;
   border-top: 4px solid;
-  border-color: #fafafa;
 }
 footer ul {
   list-style-type: none;
@@ -399,7 +373,6 @@ footer ul {
   margin-bottom: 10px;
 }
 footer a {
-  color: white;
   text-decoration: none;
 }
 footer a:active, footer a:hover, footer a:focus {
@@ -515,7 +488,6 @@ footer .footer-back-button svg {
     height: 80px;
     width: 100%;
     padding: 10px 50px;
-    background-color: #fafafa;
     position: absolute;
     top: 0;
     left: 0;
@@ -528,14 +500,12 @@ footer .footer-back-button svg {
     flex-direction: row;
     align-items: center;
     gap: 25px;
-    color: #000000;
   }
   nav.desktop ul svg {
     margin-left: 2px;
     margin-bottom: -3px;
   }
   nav.desktop ul a {
-    color: #000000;
     text-decoration: none;
   }
   nav.desktop ul a:active, nav.desktop ul a:hover, nav.desktop ul a:focus {
@@ -546,14 +516,12 @@ footer .footer-back-button svg {
     top: 80px;
     right: 0;
     z-index: 100;
-    background-color: #fafafa;
     width: 550px;
     height: auto;
     padding: 10px 20px;
   }
   .dropdown-container ul {
     list-style-type: none;
-    background-color: #fafafa;
     width: 100%;
     height: 100%;
     display: flex;
@@ -562,10 +530,8 @@ footer .footer-back-button svg {
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 15px 25px;
-    color: #000000;
   }
   .dropdown-container ul a {
-    color: #000000;
     text-decoration: none;
   }
   .dropdown-container ul a:active, .dropdown-container ul a:hover, .dropdown-container ul a:focus {
