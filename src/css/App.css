@@ -438,12 +438,12 @@ footer .footer-back-button svg {
   section.landing .text-div {
     padding: 10px 50px 0;
   }
-  section.landing.about, section.landing.contact, section.landing.sitemap, section.landing.services {
+  section.landing.about, section.landing.contact, section.landing.sitemap, section.landing.service {
     height: 150px;
     display: grid;
     grid-template-columns: 1fr auto;
   }
-  section.landing.about .text-div, section.landing.contact .text-div, section.landing.sitemap .text-div, section.landing.services .text-div {
+  section.landing.about .text-div, section.landing.contact .text-div, section.landing.sitemap .text-div, section.landing.service .text-div {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -501,7 +501,8 @@ footer .footer-back-button svg {
     padding-top: 40px;
     padding-bottom: 40px;
   }
-  section.landing.about, section.landing.contact, section.landing.sitemap, section.landing.services {
+  section.landing.about, section.landing.contact, section.landing.sitemap, section.landing.service {
+    display: grid;
     grid-template-columns: 50% 50%;
   }
   .testimonials .testimonials-flex {
@@ -618,9 +619,6 @@ footer .footer-back-button svg {
   }
 }
 @media screen and (min-width: 1280px) {
-  section.landing .text-div {
-    padding: 10px 300px 0;
-  }
   .testimonials .testimonials-flex {
     padding: 0 250px;
   }

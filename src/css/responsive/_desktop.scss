@@ -11,7 +11,8 @@ section {
         }
 
         &.home .image-div {padding-top: 40px; padding-bottom: 40px;}
-        &.about, &.contact, &.sitemap, &.services {
+        &.about, &.contact, &.sitemap, &.service {
+            display: grid;
             grid-template-columns: 50% 50%;
         }
     }
@@ -154,14 +155,6 @@ nav.desktop {
 }
 
 @media screen and (min-width: 1280px) {
-
-section {
-    &.landing {
-        .text-div {
-            padding: 10px 300px 0;
-        }
-    }
-}
 
 .testimonials {
     .testimonials-flex {

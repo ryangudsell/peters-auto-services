@@ -94,6 +94,11 @@ const SingleService = () => {
     })
   }
 
+  function decodeHTMLEntities(text) {
+    const doc = new DOMParser().parseFromString(text, 'text/html');
+    return doc.documentElement.textContent;
+  }
+
   return (
     <main>
       <section className="service landing">
@@ -106,7 +111,7 @@ const SingleService = () => {
         <section className='service service-info'>
           <h3 className='on-click go-back-service-button' 
             onClick={() => {navigate(-1)}}><ArrowLeft /> Go Back</h3>
-          <h2>{service.title.rendered}</h2>
+          <h2>{decodeHTMLEntities(service.title.rendered)}</h2>
           <div dangerouslySetInnerHTML={{ __html: service.content.rendered }} />
           <button><h3>BOOK A QUOTE</h3></button>
         </section>
