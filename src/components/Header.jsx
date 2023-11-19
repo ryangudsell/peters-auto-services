@@ -27,7 +27,7 @@ const Header = () => {
   useEffect(() => {
     axios.get(`${endpoint}`)
     .then((res) => {
-      setServices(res.data)
+      setServices(res.data.reverse())
       setLoading(false)
       console.log(res.data);
     })
