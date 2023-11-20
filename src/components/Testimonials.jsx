@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'react-bootstrap-icons'
 import axios from 'axios'
+import Loading from './Loading'
 
 import useCustomizer from '../hook/useCustomizer'
 
@@ -46,7 +47,7 @@ const Testimonials = () => {
 
 
   return (
-    testimonials && <>
+    testimonials ? <>
       {/* Make sure the parent element is a section with appropiate classes */}
       <h2>Testimonials</h2>
       <div className='testimonials-flex'>
@@ -63,7 +64,7 @@ const Testimonials = () => {
         </div>
         <ChevronRight className='on-click' onClick={() => nextTestimonial()} />
       </div>
-    </>
+    </> : <Loading />
   )
 }
 

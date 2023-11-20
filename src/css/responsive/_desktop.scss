@@ -183,5 +183,24 @@ nav.desktop {
 }
 
 // ---- SingleService Page ----
-.service {padding: 0 300px;}
+.service-api-call {
+    padding: 0 100px;
+    display: grid;
+    grid-template-columns: 48% 48%;
+    gap: 4%;
+    >* {
+        padding: 0;
+    }
+    .service-info {
+        margin: 0;
+    }
+    .service-image {
+        padding: 0;
+        margin: 0 0 10px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+}
 }

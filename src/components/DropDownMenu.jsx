@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'react-bootstrap-icons'
+import Loading from '../components/Loading'
 
 import useCustomizer from '../hook/useCustomizer';
 
@@ -22,7 +23,7 @@ const DropDownMenu = ({ closeMethod, services, loading }) => {
   return (
     <aside className='dropdown-container border-bottom'>
         <ul>
-        {!loading && services.map((service, index) => {
+        {!loading ? services.map((service, index) => {
             return (
             <li key={`${service}-${index}`} onClick={closeMethod}>
                 <Link to={`/services/${service.id}`}><p>
@@ -31,7 +32,7 @@ const DropDownMenu = ({ closeMethod, services, loading }) => {
                 </p></Link>
             </li>
             )
-        })}
+        }) : <Loading />}
         </ul>
     </aside>
   )

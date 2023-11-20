@@ -115,6 +115,7 @@ const SingleService = () => {
         </div>
       </section>
       {loading ? <Loading /> : (<>
+        <div className='service-api-call'>
         <section className='service service-info'>
           <h3 className='on-click go-back-service-button' 
             onClick={() => {navigate(-1)}}><ArrowLeft /> Go Back</h3>
@@ -125,6 +126,7 @@ const SingleService = () => {
         <section className='service service-image'>
           <img src={`${service.acf.service_image}`} alt='Service Image' />
         </section>
+        </div>
         {testimonial && 
         <section className='service service-testimonials'>
           <h2>Hear from Satisfied Customers</h2>

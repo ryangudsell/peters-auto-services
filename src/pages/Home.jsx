@@ -66,6 +66,7 @@ const Home = () => {
 
   return (
     <main>
+      {loading ? <Loading /> : <>
       <section className="home landing">
         <div className='image-div'>
           <h1>Welcome to Peter's Auto Services</h1>
@@ -87,6 +88,7 @@ const Home = () => {
       <section className='home testimonials'>
         <Testimonials />
       </section>
+      </>}
     </main>
   )
 }
