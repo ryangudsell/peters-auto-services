@@ -28,18 +28,7 @@ const Product = () => {
       console.log(service);
     })
     .catch((err) => console.log(err))
-  }, [id])
-
-  const getProduct = () => {
-    setStoreEndpoint(`${storeBaseUrl}/${Number(service.acf.quote_product_link)}`)
-    console.log(storeEndpoint);
-    axios.get(`${storeEndpoint}`)
-    .then((response) => {
-      setProduct(response.data)
-      console.log(response.data)
-    })
-    .catch((error) => console.log(error))
-  }
+  }, [id, productId])
 
   function decodeHTMLEntities(text) {
     const doc = new DOMParser().parseFromString(text, 'text/html');
@@ -90,12 +79,12 @@ const Product = () => {
         <section className='service service-info'>
           <h3 className='on-click go-back-service-button' 
             onClick={() => {navigate(-1)}}><ArrowLeft /> Go Back</h3>
-          <h2>{decodeHTMLEntities(service.title.rendered)}</h2>
-          <div dangerouslySetInnerHTML={{ __html: service.content.rendered }} />
+          <h2>{decodeHTMLEntities(service.name)}</h2>
+          <div dangerouslySetInnerHTML={{ __html: service.short_description }} />
           <button className='on-click'><h3>BOOK A QUOTE</h3></button>
         </section>
         <section className='service service-image'>
-          <img src={`${service.acf.service_image}`} alt='Service Image' />
+          <img src={`${service.images[0]}`} alt='Service Image' />
         </section>
         </div>
       </>)}
