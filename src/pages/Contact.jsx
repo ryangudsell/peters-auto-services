@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import OurInformation from '../components/OurInformation'
+import { Helmet } from 'react-helmet'
 
 import useCustomizer from '../hook/useCustomizer'
 
@@ -47,7 +48,30 @@ const Contact = () => {
     applyStyles();
   }, [applyStyles])
 
-  return (
+  return (<>
+    <Helmet>
+      {/* Primary Meta Tags */}
+      <title>Contact Us | Peter's Auto Services</title>
+      <meta name="title" content="Peter's Auto Services" />
+      <meta name="description" content="Peter's Auto Service in Titahi Bay, Porirua is focused on providing high-quality service and customer satisfaction, operating within the Wellington region since 2008." />
+      <meta name="keywords" content="Peters Auto Services, Mechanic, Auto Shop, Porirua, "/>
+
+      {/* Open Graph / Facebook */}
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="http://localhost:5173/" />
+      <meta property="og:title" content="Peter's Auto Services" />
+      <meta property="og:description" content="Peter's Auto Service in Titahi Bay, Porirua is focused on providing high-quality service and customer satisfaction, operating within the Wellington region since 2008." />
+      <meta property="og:image" content="./img/logo.png" />
+
+      {/* Twitter */}
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content="http://localhost:5173/" />
+      <meta property="twitter:title" content="Peter's Auto Services" />
+      <meta property="twitter:description" content="Peter's Auto Service in Titahi Bay, Porirua is focused on providing high-quality service and customer satisfaction, operating within the Wellington region since 2008." />
+      <meta property="twitter:image" content="./img/logo.png" />
+
+      {/* Meta Tags Generated with https://metatags.io */}
+    </Helmet>
     <main>
       <section className="contact landing">
         <div className='image-div'></div>
@@ -108,7 +132,7 @@ const Contact = () => {
         <OurInformation />
       </section>
     </main>
-  )
+  </>)
 }
 
 export default Contact
