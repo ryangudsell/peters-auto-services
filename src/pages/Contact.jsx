@@ -2,6 +2,8 @@ import { useState } from 'react'
 import axios from 'axios'
 import OurInformation from '../components/OurInformation'
 
+import useCustomizer from '../hook/useCustomizer'
+
 const formEndpoint = import.meta.env.VITE_APP_WP_API_FORM_ENDPOINT
 
 const Contact = () => {
@@ -36,6 +38,14 @@ const Contact = () => {
       setError(true)
     })
   }
+
+  const {
+    applyStyles,
+  } = useCustomizer();
+
+  useEffect(() => {
+    applyStyles();
+  }, [applyStyles])
 
   return (
     <main>

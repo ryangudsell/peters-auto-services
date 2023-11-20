@@ -1,8 +1,19 @@
-import React from 'react'
+import { useEffect } from 'react'
 import Testimonials from '../components/Testimonials'
 import OurInformation from '../components/OurInformation'
 
+import useCustomizer from '../hook/useCustomizer'
+
 const About = () => {
+
+  const {
+    applyStyles,
+  } = useCustomizer();
+
+  useEffect(() => {
+    applyStyles();
+  }, [applyStyles])
+  
   return (
     <main>
       <section className="about landing">

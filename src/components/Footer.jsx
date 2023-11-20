@@ -11,7 +11,15 @@ const Footer = () => {
           top: 0,
           behavior: 'smooth'
         })
-      }} /></div>
+      }} />
+      <a className="on-click"
+      onClick={() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        })
+      }}><p>Back to top</p></a>
+      </div>
       <ul>
         <li><h2>Page Links</h2></li>
         <li><Link to="/" className="on-click"><p>Home</p></Link></li>

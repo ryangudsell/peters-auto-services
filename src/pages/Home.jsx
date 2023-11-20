@@ -4,6 +4,8 @@ import Loading from '../components/Loading'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
+import useCustomizer from '../hook/useCustomizer'
+
 const baseUrl = import.meta.env.VITE_WP_API_BASEURL
 
 const Home = () => {
@@ -53,6 +55,14 @@ const Home = () => {
 
     return (mappedServices?.reverse())
   }
+
+  const {
+    applyStyles,
+  } = useCustomizer();
+
+  useEffect(() => {
+    applyStyles();
+  }, [applyStyles])
 
   return (
     <main>

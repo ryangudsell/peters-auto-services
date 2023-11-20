@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'react-bootstrap-icons'
 import axios from 'axios'
 
+import useCustomizer from '../hook/useCustomizer'
+
 const baseUrl = import.meta.env.VITE_WP_API_BASEURL
 
 const Testimonials = () => {
@@ -33,6 +35,15 @@ const Testimonials = () => {
       setTestimonialIndex(0)
     }
   }
+
+  const {
+    applyStyles,
+  } = useCustomizer();
+
+  useEffect(() => {
+    applyStyles();
+  }, [applyStyles])
+
 
   return (
     testimonials && <>

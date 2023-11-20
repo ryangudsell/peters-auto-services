@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Loading from './Loading'
 
+import useCustomizer from '../hook/useCustomizer'
+
 const baseUrl = import.meta.env.VITE_WP_API_BASEURL
 
 const MobileMenu = ({ closeMethod }) => {
@@ -40,6 +42,14 @@ const MobileMenu = ({ closeMethod }) => {
     const doc = new DOMParser().parseFromString(text, 'text/html');
     return doc.documentElement.textContent;
   }
+
+  const {
+    applyStyles,
+  } = useCustomizer();
+
+  useEffect(() => {
+    applyStyles();
+  }, [applyStyles])
 
   return (
     <>{!isServicesExpanded ? (

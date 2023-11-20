@@ -1,24 +1,13 @@
 import { useState, useEffect } from "react"
 import axios from 'axios'
+import { applyStyles } from '../utils/styleUtils'
 
 const useCustomizer = () => {
-    const [bodyBgColor, setBodyBgColor] = useState('');
-    const [bodyTextColor, setBodyTextColor] = useState('');
-    const [linkTextColor, setLinkTextColor] = useState('');
-    const [navBgColor, setNavBgColor] = useState('');
-    const [navBorderColor, setNavBorderColor] = useState('');
-    const [navTextColor, setNavTextColor] = useState('');
-    const [landingOverlayColor, setLandingOverlayColor] = useState('');
-    const [landingOverlayTextColor, setLandingOverlayTextColor] = useState('');
-    const [homeServicesOverlayColor, setHomeServicesOverlayColor] = useState('');
-    const [formBgColor, setFormBgColor] = useState('');
-    const [formSubheaderColor, setFormSubheaderColor] = useState('');
-    const [buttonBgColor, setButtonBgColor] = useState('');
-    const [buttonBorderColor, setButtonBorderColor] = useState('');
-    const [buttonTextColor, setButtonTextColor] = useState('');
-    const [footerBgColor, setFooterBgColor] = useState('');
-    const [footerBorderColor, setFooterBorderColor] = useState('');
-    const [footerTextColor, setFooterTextColor] = useState('');
+    const [primaryColor, setPrimaryColor] = useState('');
+    const [secondaryColor, setSecondaryColor] = useState('');
+    const [tertiaryColor, setTertiaryColor] = useState('');
+    const [textColor, setTextColor] = useState('');
+    const [altTextColor, setAltTextColor] = useState('');
     const [headerFontFamily, setHeaderFontFamily] = useState('');
     const [paragraphFontFamily, setParagraphFontFamily] = useState('');
 
@@ -29,50 +18,37 @@ const useCustomizer = () => {
         axios.get(`${endpoint}`)
         .then((res) => {
             const {
-                bodyBgColor,
-                bodyTextColor,
-                linkTextColor,
-                navBgColor,
-                navBorderColor,
-                navTextColor,
-                landingOverlayColor,
-                landingOverlayTextColor,
-                homeServicesOverlayColor,
-                formBgColor,
-                formSubheaderColor,
-                buttonBgColor,
-                buttonBorderColor,
-                buttonTextColor,
-                footerBgColor,
-                footerBorderColor,
-                footerTextColor,
+                primaryColor,
+                secondaryColor,
+                tertiaryColor,
+                textColor,
+                altTextColor,
                 headerFontFamily,
                 paragraphFontFamily
             } = res.data
-            setBodyBgColor(bodyBgColor)
-            setBodyTextColor(bodyTextColor)
-            setLinkTextColor(linkTextColor)
-            setNavBgColor(navBgColor)
-            setNavBorderColor(navBorderColor)
-            setNavTextColor(navTextColor)
-            setLandingOverlayColor(landingOverlayColor)
-            setLandingOverlayTextColor(landingOverlayTextColor)
-            setHomeServicesOverlayColor(homeServicesOverlayColor)
-            setFormBgColor(formBgColor)
-            setFormSubheaderColor(formSubheaderColor)
-            setButtonBgColor(buttonBgColor)
-            setButtonBorderColor(buttonBorderColor)
-            setButtonTextColor(buttonTextColor)
-            setFooterBgColor(footerBgColor)
-            setFooterBorderColor(footerBorderColor)
-            setFooterTextColor(footerTextColor)
+            setPrimaryColor(primaryColor)
+            setSecondaryColor(secondaryColor)
+            setTertiaryColor(tertiaryColor)
+            setTextColor(textColor)
+            setAltTextColor(altTextColor)
             setHeaderFontFamily(headerFontFamily)
             setParagraphFontFamily(paragraphFontFamily)
         })
         .catch((err) => console.error(err))
     }, [baseUrl])
   return {
-    bodyBgColor, bodyTextColor, linkTextColor, navBgColor, navBorderColor, navTextColor, landingOverlayColor, landingOverlayTextColor, homeServicesOverlayColor, formBgColor, formSubheaderColor, buttonBgColor, buttonBorderColor, buttonTextColor, footerBgColor, footerBorderColor, footerTextColor, headerFontFamily, paragraphFontFamily
+    primaryColor, secondaryColor, tertiaryColor, 
+    textColor, altTextColor,
+    headerFontFamily, paragraphFontFamily,
+    applyStyles: () => applyStyles({
+      primaryColor, 
+      secondaryColor, 
+      tertiaryColor, 
+      textColor, 
+      altTextColor,
+      headerFontFamily, 
+      paragraphFontFamily
+    })
   }
 }
 

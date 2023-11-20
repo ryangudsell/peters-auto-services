@@ -4,6 +4,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import Loading from '../components/Loading'
 
+import useCustomizer from '../hook/useCustomizer'
+
 const baseUrl = import.meta.env.VITE_WP_API_BASEURL
 
 const SingleService = () => {
@@ -26,7 +28,7 @@ const SingleService = () => {
       setLoading(false)
     })
     .catch((err) => console.log(err))
-  }, [])
+  }, [id])
 
   useEffect(() => {
     getTestimonial(service)
@@ -60,13 +62,10 @@ const SingleService = () => {
   }, [])
 
   useEffect(() => {
-    let myService = service
-    servicesArray.map((arrayItem, index) => {
-      if (arrayItem.id === myService.id) {
-        setServicesArrayIndex(index)
-      }
-    })
-  }, [servicesArray])
+    let myService = service;
+    const foundIndex = servicesArray.findIndex((arrayItem) => arrayItem.id === myService.id);
+    setServicesArrayIndex(foundIndex);
+  }, [servicesArray, service]);
 
   const prevService = () => {
     let newIndex = servicesArrayIndex - 1
@@ -98,6 +97,14 @@ const SingleService = () => {
     const doc = new DOMParser().parseFromString(text, 'text/html');
     return doc.documentElement.textContent;
   }
+  
+  const {
+    applyStyles,
+  } = useCustomizer();
+
+  useEffect(() => {
+    applyStyles();
+  }, [applyStyles])
 
   return (
     <main>
@@ -113,7 +120,7 @@ const SingleService = () => {
             onClick={() => {navigate(-1)}}><ArrowLeft /> Go Back</h3>
           <h2>{decodeHTMLEntities(service.title.rendered)}</h2>
           <div dangerouslySetInnerHTML={{ __html: service.content.rendered }} />
-          <button><h3>BOOK A QUOTE</h3></button>
+          <button className='on-click'><h3>BOOK A QUOTE</h3></button>
         </section>
         <section className='service service-image'>
           <img src={`${service.acf.service_image}`} alt='Service Image' />
