@@ -31,7 +31,7 @@ h3 {
 }
 
 p, a, li, textarea, input {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: initial;
   letter-spacing: 0.5px;
 }
@@ -116,10 +116,6 @@ section.landing .text-div > * {
   margin-bottom: 15px;
 }
 
-.testimonials {
-  margin-left: -10px;
-  margin-right: -10px;
-}
 .testimonials h2 {
   text-align: center;
 }
@@ -445,6 +441,11 @@ footer .footer-back-button svg {
   }
   .testimonials .testimonials-flex {
     padding: 0 50px;
+  }
+  .testimonials .testimonials-flex svg {
+    height: 40px;
+    width: 30px;
+    margin: -5px;
   }
   .our-info .map-div {
     width: 90%;
