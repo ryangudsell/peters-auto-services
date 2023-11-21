@@ -356,7 +356,7 @@ nav.mobile * {
 .service.page-buttons {
   height: 40px;
   width: 100%;
-  padding: 0 50px;
+  padding: 20px 50px 0;
 }
 .service.page-buttons div {
   display: flex;
@@ -370,6 +370,19 @@ nav.mobile * {
 }
 .service.page-buttons .next-button {
   text-align: right;
+}
+
+.booking-info > * {
+  margin-bottom: 15px;
+}
+
+.booking-options input {
+  width: calc(98% - 100px);
+  padding: 10px 5px 8px 12px;
+  margin-right: 2%;
+}
+.booking-options button {
+  width: 100px;
 }
 
 footer {
@@ -485,6 +498,14 @@ footer .footer-back-button svg {
   }
   .service {
     padding: 0 50px;
+  }
+  .booking-options input {
+    max-width: 450px;
+    padding: 10px 5px 8px 12px;
+    margin-right: 2%;
+  }
+  .booking-options button {
+    width: 100px;
   }
 }
 @media screen and (min-width: 950px) {

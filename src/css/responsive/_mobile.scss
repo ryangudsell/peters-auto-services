@@ -385,7 +385,7 @@ nav.mobile {
     &.page-buttons {
         height: 40px;
         width: 100%;
-        padding: 0 50px;
+        padding: 20px 50px 0;
 
         div {
             display: flex;
@@ -404,6 +404,23 @@ nav.mobile {
             text-align: right;
         }
         
+    }
+}
+
+// Booking
+.booking-info {
+    >* {
+        margin-bottom: 15px;
+    }
+}
+.booking-options {
+    input {
+        width: calc(98% - 100px);
+        padding: 10px 5px 8px 12px;
+        margin-right: 2%;
+    }
+    button {
+        width: 100px;
     }
 }
 

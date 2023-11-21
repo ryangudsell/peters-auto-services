@@ -11,7 +11,7 @@ const baseUrl = import.meta.env.VITE_WP_API_BASEURL
 const storeBaseUrl = import.meta.env.VITE_WC_PRODUCTS_URL
 
 const Product = () => {
-  const {id, productId} = useParams()
+  const {productId} = useParams()
   const navigate = useNavigate()
   const storeEndpoint = `${storeBaseUrl}/${productId}`
   console.log(storeEndpoint);
@@ -20,15 +20,17 @@ const Product = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    console.log("axios call to", `${storeEndpoint}/${productId}`);
-    axios.get(`${storeEndpoint}`)
-    .then((res) => {
-      setService(res.data)
-      setLoading(false)
-      console.log(service);
-    })
-    .catch((err) => console.log(err))
-  }, [id, productId])
+    const fetch = async () => {
+      try {
+        const res = await axios.get(`${storeEndpoint}`)
+        setService(res.data)
+        setLoading(false)
+        console.log(service);
+      } catch (error) {console.log(error)}
+    };
+
+    fetch()
+  }, [storeEndpoint, productId])
 
   function decodeHTMLEntities(text) {
     const doc = new DOMParser().parseFromString(text, 'text/html');
@@ -76,15 +78,32 @@ const Product = () => {
       </section>
       {loading ? <Loading /> : (<>
         <div className='service-api-call'>
-        <section className='service service-info'>
+        <section className='service booking-info'>
           <h3 className='on-click go-back-service-button' 
             onClick={() => {navigate(-1)}}><ArrowLeft /> Go Back</h3>
           <h2>{decodeHTMLEntities(service.name)}</h2>
+          <p>
+            {"~"}
+              {service.prices.currency_symbol}
+              {service.prices.sale_price.slice(0, -2)}
+              {service.prices.currency_decimal_separator}
+              {service.prices.sale_price.slice(-2)}
+            {" - "}
+              {service.prices.currency_symbol}
+              {service.prices.regular_price.slice(0, -2)}
+              {service.prices.currency_decimal_separator}
+              {service.prices.regular_price.slice(-2)}
+              {" "}{service.prices.currency_code}
+            {" (Depending on Vehicle Size)"}
+          </p>
+          <div className='booking-options'>
+            <input type="date" name="date-time" />
+            <button className='on-click'><p>BOOK</p></button>
+          </div>
           <div dangerouslySetInnerHTML={{ __html: service.short_description }} />
-          <button className='on-click'><h3>BOOK A QUOTE</h3></button>
         </section>
         <section className='service service-image'>
-          <img src={`${service.images[0]}`} alt='Service Image' />
+          <img src={`${service.images[0].src}`} alt='Service Image' />
         </section>
         </div>
       </>)}

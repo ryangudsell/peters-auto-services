@@ -94,4 +94,17 @@ nav.mobile {
 
 // ---- SingleService Page ----
 .service {padding: 0 50px;}
+
+// ---- Booking Page ----
+
+.booking-options {
+    input {
+        max-width: 450px;
+        padding: 10px 5px 8px 12px;
+        margin-right: 2%;
+    }
+    button {
+        width: 100px;
+    }
+}
 }
