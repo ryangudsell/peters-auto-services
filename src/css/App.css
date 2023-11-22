@@ -116,6 +116,9 @@ section.landing .text-div > * {
   margin-bottom: 15px;
 }
 
+.testimonials {
+  padding: 20px;
+}
 .testimonials h2 {
   text-align: center;
 }
